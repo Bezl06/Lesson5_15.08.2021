@@ -10,6 +10,10 @@ namespace Lesson5
             System.Console.Write("Введите размер вашего массива : ");
             int size = int.Parse(Console.ReadLine());
             int[] arr = GetRandomArr(size);
+            System.Console.WriteLine("Значения вашего масиива : ");
+            foreach (var item in arr)
+                System.Console.Write($"{item} ");
+            System.Console.WriteLine();
             int min = int.MaxValue, max = int.MinValue, summ = 0;
             for (int i = 0; i < size; summ += arr[i], i++)
             {
@@ -20,7 +24,7 @@ namespace Lesson5
             System.Console.WriteLine($"Наибольшое значение массива : {max}");
             System.Console.WriteLine($"Наименьшее значение массива : {min}");
             System.Console.WriteLine($"Общая сумма всех элементов : {summ}");
-            System.Console.WriteLine($"Среднее арифметическое всех элементов : {summ / size}");
+            System.Console.WriteLine($"Среднее арифметическое всех элементов : {(double)summ / (double)size}");
 
             //Задача 3
             System.Console.Write("\nВведите размер вашего массива : ");
@@ -34,8 +38,9 @@ namespace Lesson5
                 arrRev[--t] = arr[i];
             }
             System.Console.WriteLine("\nЗначения вашего масиива теперь : ");
-            for (int i = 0; i < size; i++)
-                System.Console.Write($"{arrRev[i]} ");
+            arr = arrRev;
+            foreach (var item in arr)
+                System.Console.Write($"{item} ");
 
             //Задача 4
             System.Console.Write("\n\nВведите размер вашего массива : ");
